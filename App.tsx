@@ -1,10 +1,11 @@
-import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
 import { StyleSheet, ImageBackground } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import StartGameScreen from "./screens/StartGameScreen";
-
+import GameScreen from "./screens/GameScreen";
 
 //Show Invalid Number alert in video
+//    Reset button
 
 //Show Invalid Number alert in video
 
@@ -15,6 +16,18 @@ import StartGameScreen from "./screens/StartGameScreen";
 //Show Invalid Number alert in video
 
 export default function App() {
+  const [userNumber, setUserNumber] = useState(0);
+
+  const pickedNumberHandler = (pickedNumber: number) => {
+    setUserNumber(pickedNumber);
+  };
+
+  let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
+
+  if (userNumber) {
+    screen = <GameScreen />;
+  }
+
   return (
     <LinearGradient colors={["#3f0337", "#B8BF1D"]} style={styles.rootScreen}>
       <ImageBackground
@@ -23,7 +36,7 @@ export default function App() {
         style={styles.rootScreen}
         imageStyle={styles.backgroundImage}
       >
-        <StartGameScreen />
+        {screen}
       </ImageBackground>
     </LinearGradient>
   );

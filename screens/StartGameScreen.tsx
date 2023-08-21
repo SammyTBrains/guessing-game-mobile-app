@@ -3,6 +3,7 @@ import { Alert, StyleSheet, TextInput, View } from "react-native";
 import PrimaryButton from "../components/PrimaryButton";
 
 //Show Invalid Number alert in video
+//     Reset button
 
 //Show Invalid Number alert in video
 
@@ -12,7 +13,9 @@ import PrimaryButton from "../components/PrimaryButton";
 
 //Show Invalid Number alert in video
 
-const StartGameScreen = () => {
+type Props = { onPickNumber: (pickedNumber: number) => void };
+
+const StartGameScreen = (props: Props) => {
   const [enteredNumber, setEnteredNumber] = useState("");
 
   const numberInputHandler = (enteredText: string) => {
@@ -32,6 +35,8 @@ const StartGameScreen = () => {
       ]);
       return;
     }
+
+    props.onPickNumber(chosenNumber);
   };
 
   return (
