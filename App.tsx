@@ -3,6 +3,17 @@ import { StyleSheet, ImageBackground } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import StartGameScreen from "./screens/StartGameScreen";
 
+
+//Show Invalid Number alert in video
+
+//Show Invalid Number alert in video
+
+//Show Invalid Number alert in video
+
+//Show Invalid Number alert in video
+
+//Show Invalid Number alert in video
+
 export default function App() {
   return (
     <LinearGradient colors={["#3f0337", "#B8BF1D"]} style={styles.rootScreen}>
