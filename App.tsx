@@ -3,6 +3,7 @@ import { StyleSheet, ImageBackground, SafeAreaView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
+import Colors from "./constants/color";
 
 //Show Invalid Number alert in video
 //    Reset button
@@ -29,7 +30,7 @@ export default function App() {
   }
 
   return (
-    <LinearGradient colors={["#3f0337", "#B8BF1D"]} style={styles.rootScreen}>
+    <LinearGradient colors={[Colors.primary700, Colors.accent500]} style={styles.rootScreen}>
       <ImageBackground
         source={require("./assets/images/GuessingGameBG.jpg")}
         resizeMode="cover"

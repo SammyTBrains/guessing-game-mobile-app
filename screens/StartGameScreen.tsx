@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Alert, StyleSheet, TextInput, View } from "react-native";
 import PrimaryButton from "../components/PrimaryButton";
+import Colors from "../constants/color";
 
 //Show Invalid Number alert in video
 //     Reset button
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
     marginTop: 100,
     marginHorizontal: 24,
     padding: 16,
-    backgroundColor: "#520447",
+    backgroundColor: Colors.primary800,
     borderRadius: 8,
 
     //Android
@@ -85,9 +86,9 @@ const styles = StyleSheet.create({
     height: 50,
     width: 50,
     fontSize: 32,
-    borderBottomColor: "#B8BF1D",
+    borderBottomColor: Colors.accent500,
     borderBottomWidth: 2,
-    color: "#B8BF1D",
+    color: Colors.accent500,
     marginVertical: 8,
     fontWeight: "bold",
     textAlign: "center",
