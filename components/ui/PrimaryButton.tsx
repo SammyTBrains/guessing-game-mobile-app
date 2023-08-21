@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import Colors from "../constants/color";
+import Colors from "../../constants/color";
 
 interface PrimaryButtonProps {
   children: ReactNode;
