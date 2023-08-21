@@ -1,4 +1,5 @@
-import { Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import Title from "../components/Title";
 
 //Show Invalid Number alert in video
 
@@ -9,7 +10,18 @@ import { Text } from "react-native";
 //Show Invalid Number alert in video
 
 const GameScreen = () => {
-  return <Text>The Game Screen</Text>;
+  return (
+    <View style={styles.screen}>
+      <Title>Opponent's Guess</Title>
+    </View>
+  );
 };
 
 export default GameScreen;
+
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    padding: 24,
+  },
+});
