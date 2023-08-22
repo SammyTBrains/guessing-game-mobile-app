@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Alert, StyleSheet, Text, View } from "react-native";
 import Title from "../components/ui/Title";
 import NumberContainer from "../components/game/NumberContainer";
 import PrimaryButton from "../components/ui/PrimaryButton";
 
-type Props = { userNumber: number };
+type Props = { userNumber: number; onGameOver: () => void };
 
 //Show Invalid Number alert in video
 
@@ -32,12 +32,14 @@ let minBoundary = 1;
 let maxBoundary = 100;
 
 const GameScreen = (props: Props) => {
-  const initialGuess = generateRandomBetween(
-    minBoundary,
-    maxBoundary,
-    props.userNumber
-  );
+  const initialGuess = generateRandomBetween(1, 100, props.userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
+
+  useEffect(() => {
+    if (currentGuess === props.userNumber) {
+      props.onGameOver();
+    }
+  }, [currentGuess, props.userNumber, props.onGameOver]);
 
   const nextGuessHandler = (direction: string) => {
     if (
