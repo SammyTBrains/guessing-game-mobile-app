@@ -16,17 +16,6 @@ import Title from "../components/ui/Title";
 import Card from "../components/ui/Card";
 import InstructionText from "../components/ui/InstructionText";
 
-//Show Invalid Number alert in video
-//     Reset button
-
-//Show Invalid Number alert in video
-
-//Show Invalid Number alert in video
-
-//Show Invalid Number alert in video
-
-//Show Invalid Number alert in video
-
 type Props = { onPickNumber: (pickedNumber: number) => void };
 
 const StartGameScreen = (props: Props) => {

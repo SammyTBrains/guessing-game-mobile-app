@@ -21,14 +21,6 @@ type Props = {
   onGameOver: (numberOfRounds: number) => void;
 };
 
-//Show Invalid Number alert in video
-
-//Show Invalid Number alert in video
-
-//Show Invalid Number alert in video
-
-//Show Invalid Number alert in video
-
 const generateRandomBetween = (
   min: number,
   max: number,

@@ -18,13 +18,6 @@ type Props = {
   onStartNewGame: () => void;
 };
 
-//Show Invalid Number alert in video
-
-//Show Invalid Number alert in video
-
-//Show Invalid Number alert in video
-
-//Show Invalid Number alert in video
 const GameOverScreen = (props: Props) => {
   const { width, height } = useWindowDimensions();
 
