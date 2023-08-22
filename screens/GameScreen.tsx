@@ -45,6 +45,11 @@ const GameScreen = (props: Props) => {
     }
   }, [currentGuess, props.userNumber, props.onGameOver]);
 
+  useEffect(() => {
+    minBoundary = 1;
+    maxBoundary = 100;
+  }, []); //only called when component mounts
+
   const nextGuessHandler = (direction: string) => {
     if (
       (direction === "lower" && currentGuess < props.userNumber) ||
