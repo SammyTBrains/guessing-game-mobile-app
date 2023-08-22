@@ -1,5 +1,6 @@
 import { useState, useCallback } from "react";
-import { StyleSheet, ImageBackground, SafeAreaView } from "react-native";
+import { StyleSheet, ImageBackground } from "react-native";
+import { SafeAreaView  } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
 import { useFonts } from "expo-font";
@@ -9,17 +10,6 @@ import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
 import Colors from "./constants/color";
 import GameOverScreen from "./screens/GameOverScreen";
-
-//Show Invalid Number alert in video
-//    Reset button
-
-//Show Invalid Number alert in video
-
-//Show Invalid Number alert in video
-
-//Show Invalid Number alert in video
-
-//Show Invalid Number alert in video
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
