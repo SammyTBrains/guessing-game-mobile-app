@@ -9,7 +9,10 @@ import Card from "../components/ui/Card";
 import InstructionText from "../components/ui/InstructionText";
 import GuessLogItem from "../components/game/GuessLogItem";
 
-type Props = { userNumber: number; onGameOver: () => void };
+type Props = {
+  userNumber: number;
+  onGameOver: (numberOfRounds: number) => void;
+};
 
 //Show Invalid Number alert in video
 
@@ -43,7 +46,7 @@ const GameScreen = (props: Props) => {
 
   useEffect(() => {
     if (currentGuess === props.userNumber) {
-      props.onGameOver();
+      props.onGameOver(guessRounds.length);
     }
   }, [currentGuess, props.userNumber, props.onGameOver]);
 
@@ -104,16 +107,18 @@ const GameScreen = (props: Props) => {
           </View>
         </View>
       </Card>
-      <FlatList
-        data={guessRounds}
-        renderItem={(itemData) => (
-          <GuessLogItem
-            roundNumber={guessRoundsListLength - itemData.index}
-            guess={itemData.item}
-          />
-        )}
-        keyExtractor={(item) => item.toString()}
-      />
+      <View style={styles.listContainer}>
+        <FlatList
+          data={guessRounds}
+          renderItem={(itemData) => (
+            <GuessLogItem
+              roundNumber={guessRoundsListLength - itemData.index}
+              guess={itemData.item}
+            />
+          )}
+          keyExtractor={(item) => item.toString()}
+        />
+      </View>
     </View>
   );
 };
@@ -133,5 +138,9 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
+  },
+  listContainer: {
+    flex: 1,
+    padding: 16,
   },
 });
